@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles1.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <title>Simulador de Diagnóstico de Piel</title>
+</head>
+<body>
+
+<h1>Simulador de Diagnóstico de Piel</h1>
+
+<div class="camera-container">
+    <video id="video" autoplay></video>
+</div>
+
+<div class="button-container">
+    <button id="snap">Tomar Foto</button>
+</div>
+
+<div class="result" id="result"></div>
+
+<script>
+    // Acceso a la cámara
+    const video = document.getElementById('video');
+    const snapButton = document.getElementById('snap');
+    const resultDiv = document.getElementById('result');
+
+    // Solicitar acceso a la cámara
+    navigator.mediaDevices.getUserMedia({ video: true })
+        .then(stream => {
+            video.srcObject = stream;
+        })
+        .catch(err => {
+            console.error("Error al acceder a la cámara:", err);
+        });
+
+    // Captura de foto
+    snapButton.addEventListener('click', () => {
+        const canvas = document.createElement('canvas');
+        const size = Math.min(video.videoWidth, video.videoHeight); // Aseguramos que la imagen sea cuadrada
+        canvas.width = size;
+        canvas.height = size;
+
+        const context = canvas.getContext('2d');
+        context.drawImage(video, 0, 0, size, size);
+        
+        // Simulación de diagnóstico (esto es solo una simulación)
+        const hasSymptoms = Math.random() > 0.5; // Simulación aleatoria
+        const diagnosisMessage = hasSymptoms ? "Se recomienda consultar a un especialista." : "No hay signos de cáncer de piel.";
+        const exampleImage = hasSymptoms ? "https://via.placeholder.com/150/FFCCCC/000000?text=Síntomas" : "https://via.placeholder.com/150/CCFFCC/000000?text=Sin+Síntomas";
+        
+        // Mostrar resultado
+        resultDiv.innerHTML = `
+            <img class="captured-image" src="${canvas.toDataURL('image/png')}" alt="Foto Capturada">
+            <p>${diagnosisMessage}</p>
+            <img src="${exampleImage}" alt="Ejemplo de diagnóstico">
+        `;
+    });
+</script>
+
+</body>
+</html>

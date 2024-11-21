@@ -1,0 +1,77 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  text-align: center;
+}
+
+h1 {
+  margin: 20px 0;
+}
+
+.button-container {
+  margin: 20px;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff; /* Color azul para el botón */
+  color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3; /* Color más oscuro al pasar el mouse */
+}
+
+.product-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.product {
+  margin: 15px;
+  padding: 10px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.product img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  transition: transform 0.3s; /* Transición suave */
+}
+
+.product img:hover {
+  transform: scale(1.1); /* Aumenta el tamaño al pasar el mouse */
+}
+
+.price {
+  margin-top: 10px;
+  font-size: 18px;
+}
+
+/* Estilos para dispositivos móviles */
+@media (max-width: 600px) {
+  .product-container {
+      flex-direction: column; /* Cambia a columna en pantallas pequeñas */
+      align-items: center; /* Centra los productos */
+  }
+
+  .product {
+      width: 90%; /* Ancho del producto en móviles */
+      max-width: 300px; /* Ancho máximo del producto */
+      margin-bottom: 20px; /* Espacio entre productos */
+  }
+
+  button {
+      width: 100%; /* Botón ocupa todo el ancho en móviles */
+      font-size: 18px; /* Aumenta el tamaño del texto del botón */
+      padding: 15px; /* Aumenta el padding del botón */
+  }
+}

@@ -1,0 +1,49 @@
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to bottom right, #d8b3a0, #f9e6d8); /* Color piel más oscuro pastel */
+  text-align: center;
+  padding: 20px;
+}
+
+.camera-container {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  margin: auto;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: white;
+}
+
+video {
+  width: 100%;
+  height: auto;
+}
+
+.button-container {
+  margin-top: 10px;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff; /* Color azul para el botón */
+  color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3; /* Color más oscuro al pasar el mouse */
+}
+
+.result {
+  margin-top: 20px;
+}
+
+.captured-image {
+  width: 150px; /* Ajusta el tamaño deseado */
+  height: 150px; /* Mantiene la imagen cuadrada */
+}
