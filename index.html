@@ -8,52 +8,78 @@
   <link rel="icon" href="./img/logo-removebg-preview.png">
 </head>
 <body>
-  <!-- Navegación -->
   <nav>
     <a href="#" class="nav-brand">
       <img src="img/logo-removebg-preview.png" alt="Logo Prevención" class="nav-logo">
     </a>
-    <input type="checkbox" id="menu-toggle">
-    <label for="menu-toggle" class="menu-btn">☰</label> <!-- Ícono de tres líneas -->
+    <button class="menu-btn" id="menu-toggle">☰</button>
     <ul class="nav-menu">
       <li><a href="#inicio">Inicio</a></li>
-      <li class="dropdown">
-        <a href="#deteccion">Detección</a>
-        <ul class="dropdown-menu">
-          <li><a href="#autoexamenes">Autoexámenes</a></li>
-          <li><a href="#examenes-anuales">Exámenes Anuales</a></li>
-          <li><a href="#deteccion-temprana">Detección Temprana</a></li>
-          <li><a href="#piel-sana">Piel Sana</a></li>
+      <li class="submenu">
+        <a href="index1.html">Detección</a>
+        <ul class="submenu-items">
+          <li><a href="#">Autoexámenes</a></li>
+          <li><a href="#">Exámenes Anuales</a></li>
+          <li><a href="#">Detección Temprana</a></li>
+          <li><a href="#">Piel Sana</a></li>
         </ul>
       </li>
-      <li><a href="index1.html">Prevención</a></li>
+      <li><a href="#prevencion">Prevención</a></li>
       <li><a href="index2.html">Artículos</a></li>
     </ul>
   </nav>
 
-  <!-- Encabezado -->
   <header id="inicio">
     <h1>Protege tu Piel</h1>
     <p>Educación y prevención para una piel saludable.</p>
   </header>
 
-  <!-- Contenido Principal -->
   <main>
-    <!-- Sección de Prevención -->
+    <section id="inicio-info">
+      <h2>¿Qué es el Cáncer de Piel?</h2>
+      <p>El cáncer de piel es el crecimiento anormal de las células de la piel. Es uno de los tipos de cáncer más comunes, y se produce cuando las células de la piel se multiplican de manera descontrolada.</p>
+      <h3>¿Por qué ocurre el Cáncer de Piel?</h3>
+      <p>La principal causa del cáncer de piel es la exposición excesiva a los rayos UV del sol o las camas de bronceado, lo que daña el ADN de las células de la piel. Otros factores, como antecedentes familiares, edad y tipo de piel, también pueden influir.</p>
+      <img src="img/propuesta.jpg" alt="Cáncer de piel" class="section-image">
+    </section>
+
     <section id="prevencion">
-      <h2>Paso a paso para prevenir el cáncer de piel</h2>
+      <h2>Consejos para prevenir el cáncer de piel</h2>
+      <p>Pasos para cuidar tu piel y prevenir el cáncer de piel:</p>
       <ol>
-        <li>Usa protector solar con SPF adecuado.</li>
-        <li>Evita la exposición al sol entre las 10 a.m. y las 4 p.m.</li>
-        <li>Usa ropa protectora, sombreros y gafas de sol.</li>
-        <li>Revisa tu piel regularmente para detectar cambios.</li>
+        <li>Usa protector solar diariamente.</li>
+        <li>Evita exponerte al sol en horas de alta intensidad.</li>
+        <li>Revisa tus lunares regularmente.</li>
       </ol>
+    </section>
+
+    <section id="contacto">
+      <h2>Contáctanos</h2>
+      <p>Si necesitas más información, no dudes en escribirnos.</p>
+      <a href="/pages/contacto.html" class="contact-btn">Ir a la página de contacto</a>
     </section>
   </main>
 
-  <!-- Pie de Página -->
   <footer>
-    <p>© 2024 Prevención del Cáncer de Piel. Todos los derechos reservados.</p>
+    <p>© 2024 PielSalud. Todos los derechos reservados. Desarrollo de una app móvil para la prevención del cáncer de piel.</p>
+    <div class="social-links">
+      <a href="https://www.facebook.com" target="_blank"><img src="img/fac.png" alt="Facebook" class="social-icon"></a>
+      <a href="https://twitter.com" target="_blank"><img src="img/tw.png" alt="Twitter" class="social-icon"></a>
+      <a href="https://www.instagram.com" target="_blank"><img src="img/ig.png" alt="Instagram" class="social-icon"></a>
+      <a href="https://www.linkedin.com" target="_blank"><img src="img/lk.png" alt="LinkedIn" class="social-icon"></a>
+    </div>
   </footer>
+
+  <!-- JavaScript para abrir y cerrar el menú -->
+  <script>
+    // Selecciona el botón del menú y la lista del menú
+    const menuToggle = document.getElementById('menu-toggle');
+    const navMenu = document.querySelector('.nav-menu');
+
+    // Añade un evento de clic para abrir y cerrar el menú en pantallas pequeñas
+    menuToggle.addEventListener('click', function() {
+      navMenu.classList.toggle('active');
+    });
+  </script>
 </body>
 </html>

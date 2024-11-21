@@ -1,34 +1,11 @@
-/* General */
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    background: #fbe8e6;
-    color: #5a4b47;
-  }
-  
-  h1, h2 {
-    color: #a5644e;
-  }
-  
-  header {
-    text-align: center;
-    padding: 40px 20px;
-    background: linear-gradient(135deg, #fbe8e6, #ffd6cc);
-  }
-  
-  /* Navegación */
-  nav {
-    position: fixed;
-    top: 0;
-    width: 100%;
+/* Navegación */
+nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
     background: linear-gradient(90deg, #ffd6cc, #ffe8e6);
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    z-index: 1000;
   }
   
   .nav-logo {
@@ -36,14 +13,15 @@ body {
   }
   
   .menu-btn {
-    display: none; /* Por defecto, el botón hamburguesa está oculto */
+    display: none;
     font-size: 30px;
     cursor: pointer;
+    background: none;
+    border: none;
     color: #5a4b47;
     position: absolute;
-    right: 49px; /* Posición fija desde la derecha */
-    top: 15px; /* Alineación vertical */
-    z-index: 1500; /* Asegura que esté encima del resto */
+    right: 20px; /* Mueve el botón hamburguesa hacia la derecha */
+    top: 15px;
   }
   
   .nav-menu {
@@ -67,74 +45,141 @@ body {
   }
   
   /* Submenú */
-  .dropdown-menu {
+  .submenu {
+    position: relative;
+  }
+  
+  .submenu-items {
     display: none;
     position: absolute;
     top: 100%;
     left: 0;
-    background: #ffe8e6;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    border-radius: 5px;
+    background-color: #ffe8e6;
+    padding: 10px;
     list-style: none;
-    padding: 10px 0;
-    z-index: 1000;
+    margin: 0;
   }
   
-  .dropdown:hover .dropdown-menu {
+  .submenu:hover .submenu-items {
     display: block;
   }
   
-  .dropdown-menu li a {
-    padding: 10px 20px;
-    display: block;
-    font-size: 14px;
+  .submenu-items li a {
     color: #5a4b47;
+    padding: 8px 12px;
+    text-decoration: none;
+    display: block;
   }
   
-  .dropdown-menu li a:hover {
+  .submenu-items li a:hover {
     background: #ffad99;
     border-radius: 5px;
   }
   
-  /* Adaptabilidad para móviles */
+  /* Estilos para pantallas pequeñas */
   @media (max-width: 768px) {
     .menu-btn {
-      display: block; /* Muestra el botón hamburguesa */
+      display: block;
     }
   
     .nav-menu {
       flex-direction: column;
+      display: none;
+      width: 100%;
+      background-color: #ffe8e6;
       position: absolute;
       top: 60px;
-      left: -100%; /* Oculto inicialmente */
-      width: 100%;
-      background: #ffe8e6;
-      transition: left 0.3s;
+      left: 0;
+      padding: 20px 0;
     }
   
-    #menu-toggle {
-      display: none;
-    }
-  
-    #menu-toggle:checked + .menu-btn + .nav-menu {
-      left: 0; /* Muestra el menú */
+    .nav-menu.active {
+      display: flex;
     }
   
     .nav-menu li {
       text-align: center;
+      width: 100%;
       padding: 10px 0;
+    }
+  
+    .submenu-items {
+      position: static;
     }
   }
   
-  /* Estilo para modo escritorio */
-  @media (min-width: 769px) {
-    .nav-menu {
-      display: flex; /* Menú horizontal */
-      position: static; /* Restablece posición normal */
-    }
+  /* Secciones */
+  header {
+    text-align: center;
+    padding: 40px 20px;
+    background: linear-gradient(135deg, #fbe8e6, #ffd6cc);
+    color: #5a4b47;
+  }
   
-    .menu-btn {
-      display: none; /* Oculta el botón hamburguesa */
-    }
+  main {
+    padding: 20px;
+  }
+  
+  section {
+    margin-bottom: 30px;
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  #inicio-info h2 {
+    font-size: 24px;
+    color: #5a4b47;
+  }
+  
+  #inicio-info h3 {
+    font-size: 20px;
+    color: #5a4b47;
+  }
+  
+  #inicio-info img {
+    width: 100%;
+    max-width: 600px;
+    margin-top: 20px;
+  }
+  
+  .contact-btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background: #ffad99;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s;
+  }
+  
+  .contact-btn:hover {
+    background: #e67e6d;
+  }
+  
+  /* Footer */
+  footer {
+    background-color: #5a4b47;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+  }
+  
+  .social-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+  }
+  
+  .social-icon {
+    width: 40px;
+    height: 40px;
+    transition: transform 0.3s;
+  }
+  
+  .social-icon:hover {
+    transform: scale(1.1);
   }
   
