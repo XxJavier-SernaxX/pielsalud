@@ -92,11 +92,12 @@ nav {
       left: 0;
       padding: 20px 0;
     }
+    
   
     .nav-menu.active {
       display: flex;
     }
-  
+    
     .nav-menu li {
       text-align: center;
       width: 100%;
@@ -159,13 +160,14 @@ nav {
     background: #e67e6d;
   }
   
-  /* Footer */
+  /* Footer. */
   footer {
     background-color: #5a4b47;
     color: white;
     text-align: center;
     padding: 20px 0;
   }
+
   
   .social-links {
     display: flex;
